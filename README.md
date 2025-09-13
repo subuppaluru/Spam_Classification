@@ -1,38 +1,98 @@
-SMS Spam Detection Project
-Overview
-This project aims to build a machine learning model to classify SMS messages as either "ham" (legitimate) or "spam". The notebook covers the entire process from data loading and exploratory data analysis (EDA) to text preprocessing, feature extraction, model training, evaluation, and error analysis.
+# SMS Spam Detection Project
 
-Dataset
-The dataset used in this project is the "SMS Spam Collection v1" dataset, loaded from the spam.csv file. It contains SMS messages labeled as either 'ham' or 'spam'.
+## Table of Contents
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Project Steps](#project-steps)
+- [Results](#results)
+- [Potential Improvements](#potential-improvements)
+- [Usage](#usage)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [How to Run](#how-to-run)
+- [Evaluation](#evaluation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-Project Steps
-Data Loading and Description: The dataset is loaded into a pandas DataFrame, and its initial structure, data types, and basic statistics are inspected.
-Exploratory Data Analysis (EDA):
-Analysis of the class distribution to understand the balance between 'ham' and 'spam' messages.
-Investigation of message lengths and their distribution.
-Identification of the most common words in both 'ham' and 'spam' messages.
-Text Preprocessing: The raw text messages are cleaned and transformed through steps like lowercasing, noise removal, tokenization, stop word removal, and lemmatization.
-Feature Extraction: The preprocessed text data is converted into numerical features using Bag-of-Words representations (TF-IDF and CountVectorizer).
-Model Training:
-The data is split into training and testing sets.
-Classification models, specifically Multinomial Naive Bayes and Logistic Regression, are trained on the training data.
-Model Evaluation: The trained models are evaluated on the test set using classification reports, providing metrics such as precision, recall, and F1-score.
-Model Comparison: The performance metrics of the trained models are compared to determine the best-performing model for this task.
-Error Analysis: Misclassified messages are examined to understand the types of errors the models are making.
-Key Feature Analysis: The most important words that contribute to the classification of messages as spam or ham are identified.
-Conclusion and Potential Improvements: The project is summarized, the suitability of the models for a use case is discussed, and potential future improvements are suggested.
-Results
-Both the Multinomial Naive Bayes and Logistic Regression models achieved high accuracy in classifying SMS messages. The Logistic Regression model showed slightly better overall performance, particularly in terms of precision for spam detection, which is important for minimizing false positives. Key features indicative of spam include words related to calls, promotions, and urgency, while ham messages contain more conversational terms.
+---
 
-Potential Improvements
-Addressing the class imbalance in the dataset using techniques like oversampling or undersampling.
-Exploring additional feature engineering methods, such as N-grams or incorporating message length as a feature.
-Evaluating other advanced classification algorithms.
-Hyperparameter tuning of the selected models.
-Training on a larger and more diverse dataset.
-Implementing a user feedback mechanism for continuous model improvement.
-Usage
-To run this notebook and reproduce the analysis:
+## Overview
+This project aims to build a machine learning model to classify SMS messages as either "ham" (legitimate) or "spam". The notebook covers the entire process from data loading and exploratory data analysis, through text preprocessing and feature extraction, to model training, evaluation, and analysis.
 
-Clone the repository to your local machine.
-Ensure you have Python and the necessary libraries installed (pandas, numpy, scikit-learn, nltk, seaborn, matplotlib). You can install them using pip:
+## Dataset
+The dataset used in this project is the "SMS Spam Collection v1" dataset, loaded from the `spam.csv` file. It contains SMS messages labeled as either 'ham' or 'spam'.
+
+## Project Steps
+1. **Data Loading and Description**: Load dataset, inspect structure, data types, and basic statistics.
+2. **Exploratory Data Analysis (EDA)**:
+   - Analyze class distribution.
+   - Investigate message lengths and distribution.
+   - Identify most common words in 'ham' and 'spam' messages.
+3. **Text Preprocessing**: Clean and transform messages (lowercasing, noise removal, tokenization, stop word removal, lemmatization).
+4. **Feature Extraction**: Convert text data into numerical features using Bag-of-Words (TF-IDF, CountVectorizer).
+5. **Model Training**:
+   - Split data into training and testing sets.
+   - Train Multinomial Naive Bayes and Logistic Regression classifiers.
+6. **Model Evaluation**: Evaluate models using classification reports (precision, recall, F1-score).
+7. **Model Comparison**: Compare performance metrics to determine best model.
+8. **Error Analysis**: Examine misclassified messages to understand errors.
+9. **Key Feature Analysis**: Identify most important words for spam/ham classification.
+10. **Conclusion and Improvements**: Summarize findings and suggest further improvements.
+
+## Results
+Both the Multinomial Naive Bayes and Logistic Regression models achieved high accuracy in classifying SMS messages. Logistic Regression showed slightly better overall performance.
+
+## Potential Improvements
+- Address class imbalance using oversampling/undersampling.
+- Explore additional feature engineering (N-grams, message length).
+- Evaluate advanced classification algorithms.
+- Hyperparameter tuning.
+- Train on larger/more diverse datasets.
+- Implement user feedback mechanisms.
+
+## Usage
+To reproduce the analysis:
+1. Clone the repository to your local machine.
+2. Ensure you have Python and necessary libraries installed:
+   ```bash
+   pip install pandas numpy scikit-learn nltk seaborn matplotlib
+   ```
+3. Run the Jupyter notebook or script as described below.
+
+## Requirements
+- Python 3.x
+- pandas
+- numpy
+- scikit-learn
+- nltk
+- seaborn
+- matplotlib
+
+## Installation
+```bash
+git clone https://github.com/subuppaluru/Spam_Classification.git
+cd Spam_Classification
+pip install -r requirements.txt
+```
+*(If `requirements.txt` is missing, install the libraries as listed above.)*
+
+## How to Run
+Open the notebook/script in Jupyter Notebook or run:
+```bash
+python <script_name>.py
+```
+Follow the steps and cells in order.
+
+## Evaluation
+The evaluation metrics and confusion matrix are displayed in the notebook output.
+
+## Contributing
+Contributions are welcome! Please open issues or submit pull requests for improvements.
+
+## License
+Include license information here.
+
+## Acknowledgements
+- [SMS Spam Collection Dataset](https://www.dt.fee.unicamp.br/~tiago/smsspamcollection/)
+- Open source libraries: pandas, numpy, scikit-learn, nltk, seaborn, matplotlib
